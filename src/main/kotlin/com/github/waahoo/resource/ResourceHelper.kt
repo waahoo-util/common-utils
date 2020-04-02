@@ -1,4 +1,4 @@
-package io.github.waahoo.resource
+package com.github.waahoo.resource
 
 import java.nio.charset.Charset
 import java.nio.file.FileSystems

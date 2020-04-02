@@ -1,4 +1,4 @@
-package io.github.waahoo.mail
+package com.github.waahoo.mail
 
 import java.util.*
 import javax.mail.*
@@ -11,7 +11,10 @@ object SendMail {
   private var password = ""
   private var auth = object : Authenticator() {
     override fun getPasswordAuthentication(): PasswordAuthentication {
-      return PasswordAuthentication(username, password)
+      return PasswordAuthentication(
+        username,
+        password
+      )
     }
   }
   
@@ -24,12 +27,15 @@ object SendMail {
       put("mail.smtp.socketFactory.port", "465")
       put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory")
     }
-    this.username = username
-    this.password = password
+    SendMail.username = username
+    SendMail.password = password
   }
   
   fun sendMail(recipient: String, subject: String, content: String) {
-    val session = Session.getInstance(prop, auth)
+    val session = Session.getInstance(
+      prop,
+      auth
+    )
     val message: Message = MimeMessage(session)
     message.setFrom(InternetAddress(username))
     message.setRecipients(

@@ -1,4 +1,4 @@
-package io.github.waahoo.process
+package com.github.waahoo.process
 
 import java.io.BufferedReader
 
