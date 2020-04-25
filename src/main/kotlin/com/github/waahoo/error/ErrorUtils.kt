@@ -8,5 +8,5 @@ fun Exception.stackTraceToString(): String {
   bout.use {
     printStackTrace(PrintStream(bout, true, "UTF-8"))
   }
-  return bout.toString(Charsets.UTF_8)
+  return bout.toString("UTF-8")
 }
