@@ -6,7 +6,7 @@ import java.io.PrintStream
 fun Exception.stackTraceToString(): String {
   val bout = ByteArrayOutputStream()
   bout.use {
-    printStackTrace(PrintStream(bout, true, Charsets.UTF_8))
+    printStackTrace(PrintStream(bout, true, "UTF-8"))
   }
   return bout.toString(Charsets.UTF_8)
 }
